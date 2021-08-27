@@ -1,23 +1,20 @@
 {
-  "name": "node",
-  "version": "1.0.0",
-  "description": "Hello Node",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dlstn4509/Node.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dlstn4509/Node/issues"
-  },
-  "homepage": "https://github.com/dlstn4509/Node#readme",
   "dependencies": {
-    "moment": "^2.29.1"
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.0",
+    "passport": "^0.4.1",
+    "pug": "^3.0.2",
+    "sequelize": "^6.6.5",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
   }
 }
