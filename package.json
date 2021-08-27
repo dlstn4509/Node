@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dlstn4509/Node/issues"
   },
-  "homepage": "https://github.com/dlstn4509/Node#readme"
+  "homepage": "https://github.com/dlstn4509/Node#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }
