@@ -15,8 +15,21 @@
   <script src="../0.BASE/05_util.js"></script>
 </head>
 <body>
-  <div class="jumbotron">
-    <h2>Hello World</h2>
+  <div class="container pt-3">
+    <div class="alert alert-primary mb-3">
+      <h1>
+        <i class="fa fa-book"></i> 도서 관리 시스템
+      </h1>
+    </div>
+    <form action="/book" method="post" class="p-4 border border-info rounded">
+      <div class="py-2">
+        <input type="text" name="name" placeholder="도서명" class="form-control">
+      </div>
+      <div class="py-2">
+        <input type="text" name="content" placeholder="내용" class="form-control">
+      </div>
+      <button class="btn btn-primary">저장</button>
+    </form>
   </div>
   <script src="../js/01.index.js"></script>
 </body>
