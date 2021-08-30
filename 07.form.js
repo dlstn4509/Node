@@ -29,7 +29,7 @@ app.post('/book', (req, res, next) => {
 	// req.body (type: application/json): axios.post('/book', { params: {...} })
 	// req.body (type: application/x-www-urlencoded): <form method="post">...</form>
 	console.log(req.body)
-	res.send('받았음')
+	res.send('받았음') 
 })
 
 

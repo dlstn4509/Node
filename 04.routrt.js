@@ -12,34 +12,22 @@ const books = [
 ]
 
 /*************** router init **************/
-app.get('/', (req, res, next) => {
-	res.send('/ 입니다.')
-})
-
-app.get('/test', (req, res, next) => {
-	res.send('/test 입니다.')
-})
-
-app.get('/book', (req, res, next) => {
+app.get('/books', (req, res, next) => {
 	res.status(200).json(books)
 })
-
-app.get('/book/1', (req, res, next) => {
+app.get('/books/1', (req, res, next) => {
 	const book = books.filter(v => v.id === 1)
 	res.status(200).json(book)
 })
-
-app.get('/book/2', (req, res, next) => {
+app.get('/books/2', (req, res, next) => {
 	const book = books.filter(v => v.id === 2)
 	res.status(200).json(book)
 })
-
-app.get('/book/3', (req, res, next) => {
+app.get('/books/3', (req, res, next) => {
 	const book = books.filter(v => v.id === 3)
 	res.status(200).json(book)
 })
-
-app.get('/book/4', (req, res, next) => {
+app.get('/books/4', (req, res, next) => {
 	const book = books.filter(v => v.id === 4)
 	res.status(200).json(book)
 })

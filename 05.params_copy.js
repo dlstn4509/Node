@@ -2,6 +2,9 @@
 const port = 3000
 const express = require('express')
 const app = express()
+const { zp, random } = require('./modules/05_util')
+const _ = require('lodash')
+const { includes } = require('lodash')
 
 const books = [
 	{ id: 1, name: '별주부전', content: '거북이가 용왕을...' },
@@ -11,33 +14,22 @@ const books = [
 	{ id: 5, name: '춘향전', content: '그네타다 낚였네...' },
 ]
 
-/************** view engine ***************/
-app.set('view engine', 'ejs')
-app.set('views', './views')
-
-
-/*************** middleware ***************/
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-
-
 /*************** router init **************/
-app.use('/', express.static('./public'))
-
-app.get('/book', (req, res, next) => {
-	const reverseBooks = books.slice().reverse();
-	res.status(200).render('list', { reverseBooks })
+app.get('/', (req, res, next) => {
+	res.send('/입니다ㄴㅇㅇㄴ')
 })
 
-app.post('/book', (req, res, next) => {
-	const { name, content } = req.body
-	const id = books[books.length - 1].id + 1
-	books.push({ id, name, content })
-	res.status(200).redirect('/book')
+app.get('/search', (req, res, next) => {
+	const q = req.query.q
+	if(!q) res.status(200).json([])
+	else res.status(200).json(books.filter(v => v.name.includes(q) || v.content.includes(q)))
 })
 
+app.get(['/book', '/book/:id'], (req, res, next) => {
+	const id = req.params.id
+	res.status(200).json(id ? books.filter(v => v.id == id) : books)
+})
 
 /*************** server init **************/
 app.listen(port, () => { console.log('http://127.0.0.1:'+port) })
-
 
