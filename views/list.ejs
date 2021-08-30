@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../0.BASE/00_all.min.css">
+  <link rel="stylesheet" href="../0.BASE/01_bootstrap.min.css">
+  <link rel="stylesheet" href="../0.BASE/02_base.css">
+  <link rel="stylesheet" href="../css/list.css">
+  <script src="../0.BASE/04_jquery.min.js"></script>
+  <script src="../0.BASE/moment.min.js"></script>
+  <script src="../0.BASE/lodash.min.js"></script>
+  <script src="../0.BASE/axios.min.js"></script>
+  <script src="../0.BASE/promise.polyfill.min.js"></script>
+  <script src="../0.BASE/05_util.js"></script>
+</head>
+<body>
+	<div class="container pt-3">
+		<div class="alert alert-primary mb-3 d-flex justify-content-between align-items-center">
+			<h1 style="font-size: 1.25em;">
+				<i class="fa fa-book"></i> 도서관리시스템
+			</h1>
+			<ul class="breadcrumb mb-0">
+				<li class="breadcrumb-item active">도서 리스트</li>
+				<li class="breadcrumb-item"><a href="/book/write.html">도서 작성</a></li>
+			</ul>
+		</div>
+		<table class="book-tbl table table-striped table-hover text-center border-bottom">
+			<thead class="thead-dark">
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>내용</th>
+				</tr>
+			</thead>
+			<tbody>
+      <% for(var book of reverseBooks) { %>
+        <tr>
+          <td><%=book.id%></td>
+          <td><%=book.name%></td>
+          <td><%=book.content%></td>
+        </tr>
+      <% } %>
+			</tbody>
+		</table>
+	</div>
+  <script src="../js/list.js"></script>
+</body>
+</html>

@@ -12,24 +12,22 @@ const books = [
 ]
 
 /*************** middleware ***************/
-// application/json
 app.use(express.json())
-
-// application/x-www-urlencoded
 app.use(express.urlencoded({ extended: false }))
+
 
 /*************** router init **************/
 app.use('/', express.static('./public'))
-app.get('/', (req, res, next) => {
-	// req.params.id (/book/:id)
-	// req.query.id (/book?id=2)
+
+app.get('/book', (req, res, next) => {
+	res.status(200).json(books.slice().reverse())
 })
 
 app.post('/book', (req, res, next) => {
-	// req.body (type: application/json): axios.post('/book', { params: {...} })
-	// req.body (type: application/x-www-urlencoded): <form method="post">...</form>
-	console.log(req.body)
-	res.send('받았음')
+	const { name, content } = req.body
+	const id = books[books.length - 1].id + 1
+	books.push({ id, name, content })
+	res.status(200).redirect('/book/list.html')
 })
 
 
