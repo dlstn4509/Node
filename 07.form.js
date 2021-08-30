@@ -11,21 +11,27 @@ const books = [
 	{ id: 5, name: '춘향전', content: '그네타다 낚였네...' },
 ]
 
-/********************** middle ware *********************/
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
 
+/********************** middle ware *********************/
+// application/json
+app.use(express.json())
+
+// application/x-www-urlencoded
+app.use(express.urlencoded({extended: false})) // form post 방식
 
 /********************** router init *********************/
 app.use('/', express.static('./public'))
-app.get('/', (req, res, next) => {})
+app.get('/', (req, res, next) => {
+  // req.params.id (/book/:id)
+  // req.query.id (/book?id=1)
+})
 
 app.post('/book', (req, res, next) => {
-  const {name, content} = req.body
-  const id = books[books.length - 1].id + 1
-  books.push({id, name, content})
-  res.status(200).redirect('/book/list.html')
+  // req.body (type: application/json) : axiox.post('/book', {params: {...}})
+  // req.body (type: application/x-www-urlencoded) : <form method="post">...</form>
+  res.send('받았음')
 })
+
 
 
 /********************** server init *********************/
