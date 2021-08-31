@@ -1,1 +1,4 @@
 /* about.css */
+.about-wrap {display: flex;}
+.about-wrap .img-wp {width: 40%;}
+.about-wrap .content-wp {width: 60%; padding-left: 5%; line-height: 1.5;}

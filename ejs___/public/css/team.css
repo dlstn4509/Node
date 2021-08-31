@@ -1,0 +1,5 @@
+/* team.css */
+.team-wrap {display: flex;}
+.team-wrap .pf {width: 25%; padding: 1%;}
+.team-wrap .pf .title {font-size: 1.5em; padding: .5em; color: #fff; background-color: #0064c9;}
+.team-wrapper .sub-title {font-size: 1.25em; color: #777;}

@@ -1,0 +1,16 @@
+<%- include('../inc/head.ejs')  %> 
+<div class="wrapper">
+  <%- include('../inc/navi.ejs')  %> 
+  <!-- 본문내용 시작 -->
+  <section class="pf-wrapper content-wrapper">
+    <%- include('../inc/title-bar.ejs') %>
+    <div class="pf-wrap">
+      <% for(let list of lists) { %> 
+        <%- include('../components/list.ejs', {list})  %> 
+      <% } %> 
+    </div> 
+  </section>
+  <!-- 본문내용 끝 -->
+  <%- include('../inc/footer.ejs')  %> 
+</div>
+<%- include('../inc/foot.ejs')  %> 

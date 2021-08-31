@@ -1,0 +1,19 @@
+<%- include('../inc/head.ejs')  %> 
+<div class="wrapper">
+  <%- include('../inc/navi.ejs')  %> 
+  <!-- 본문내용 시작 -->
+  <section class="about-wrapper content-wrapper">
+    <%- include('../inc/title-bar.ejs') %> 
+    <div class="about-wrap">
+      <div class="img-wp">
+        <img src="/img/f1.jpg" alt="me" class="w100">
+      </div>
+      <div class="content-wp">
+        <%= content %> 
+      </div>
+    </div>
+  </section>
+  <!-- 본문내용 끝 -->
+  <%- include('../inc/footer.ejs')  %> 
+</div>
+<%- include('../inc/foot.ejs')  %> 
