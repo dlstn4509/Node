@@ -1,0 +1,21 @@
+doctype html
+html(lang="ko")
+	head
+		meta(charset="utf-8")
+		title= title
+		link(rel="stylesheet", href="../public/0.BASE/00_all.min.css")
+		link(rel="stylesheet", href="/0.BASE/02_base.css")
+		link(rel="stylesheet", href="/css/test.css")
+	body
+		.wrapper
+			h1= title 
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore illo possimus dolorem veritatis corrupti beatae aspernatur, porro repellat eligendi expedita pariatur id reprehenderit ut sunt rerum nesciunt maxime doloribus harum?
+			ui.lists
+				if list
+					each list in lists
+						li.list
+							.img-wp
+								img.w100(src=`img/${lists.src}`)
+							.title-wp= list.title
+				else
+					p 데이터가 없습니다.

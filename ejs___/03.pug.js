@@ -8,6 +8,7 @@ const app = express()
 /****************************** view engine *******************/
 app.set('view engine', 'pug')
 app.set('views', './views2')
+app.locals.pretty = true
 
 
 
@@ -19,6 +20,24 @@ app.use(express.urlencoded({ extended: false }))
 
 /***************************** ruoter init ********************/
 app.use('/', express.static('./public'))
+
+app.get('/test', (req, res, next) => {
+	const title = 'Pug를 소개합니다.'
+	const lists = [
+		{title : 'PF_01', src: '/public/img/f1.jpg'},
+		{title : 'PF_02', src: '/public/img/f2.jpg'},
+		{title : 'PF_03', src: '/public/img/f3.jpg'},
+	]
+	res.status(200).render('test', {title, lists})
+})
+
+app.get('/test2', (req, res, next) => {
+	res.status(200).render('test2')
+})
+
+app.get('/test3', (req, res, next) => {
+	res.status(200).render('test3')
+})
 
 app.get('/about', (req, res, next) => {
 	const title = 'About Me'

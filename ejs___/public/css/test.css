@@ -1,0 +1,3 @@
+.wrapper {max-width: 800px; margin: 30px auto;}
+.lists {display: flex;}
+.lists .list {width: 33.3333%; padding: 1%;}

@@ -1,0 +1,9 @@
+extends ../layout/sample-layout
+
+block content
+	section.pf-wrapper.content-wrapper
+		include ../inc/title-bar
+		.pf-wrap
+			each list in lists
+				include ../components/list
+
