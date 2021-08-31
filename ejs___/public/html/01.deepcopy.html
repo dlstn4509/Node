@@ -1,0 +1,21 @@
+<script>
+	const arr = [
+		{ name: 'HONG' },
+		{ name: 'KONG' },
+		{ name: 'LONG' },
+	];
+	const arr2 = arr;
+	const arr3 = arr.slice();			// softcopy
+	const arr4 = [...arr];				// softcopy
+	const arr5 = [].concat(arr);	// softcopy
+	const arr6 = JSON.parse(JSON.stringify(arr)); // deepcopy
+	arr.push({ name: 'MONG' })
+	arr[0].name = 'ONG'
+	console.log(arr[0] === arr3[0]);
+	console.log('arr', arr);
+	console.log('arr2', arr2);
+	console.log('arr3', arr4);
+	console.log('arr4', arr4);
+	console.log('arr5', arr5);
+	console.log('arr6', arr6);
+</script>

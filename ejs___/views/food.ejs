@@ -1,0 +1,11 @@
+<%- include('./inc/head') %> 
+<h1 class="logo">잘나가 점심 메뉴</h1>
+<ul class="lists">
+	<% for(let v of menu) { %> 
+		<li class="list">
+			<div class="title"><%= v.name %> </div>
+			<div class="price"><%= numeral(v.price).format('0,0') %> 원</div>
+		</li>
+	<% } %> 
+</ul>
+<%- include('./inc/foot') %> 
