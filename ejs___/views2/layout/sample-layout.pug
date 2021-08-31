@@ -5,17 +5,19 @@ html(lang='ko')
 		meta(http-equiv='X-UA-Compatible' content='IE=edge')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		title= title 
-		link(rel='stylesheet' href='/0.BASE/00_all.min.css')
-		link(rel='stylesheet' href='/0.BASE/01_bootstrap.min.css')
-		link(rel='stylesheet' href='/0.BASE/02_base.css')
+		link(rel='stylesheet' href='/css/all.min.css')
+		link(rel='stylesheet' href='/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/css/base.css')
 		link(rel='stylesheet' href='/css/common.css')
 		link(rel='stylesheet' href=`/css/${file}.css`)
-		script(src='/0.BASE/04_jquery.min.js')
-		script(src='/0.BASE/moment.min.js')
-		script(src='/0.BASE/lodash.min.js')
-		script(src='/0.BASE/05_util.js')
+		script(src='/js/jquery.min.js')
+		script(src='/js/moment.min.js')
+		script(src='/js/lodash.min.js')
+		script(src='/js/util.js')
 	body
 		.wrapper
 			include ../inc/navi
 			block content
+			.recent-wrap
+				block recent
 			include ../inc/footer
