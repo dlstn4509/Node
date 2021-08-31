@@ -1,8 +1,9 @@
 extends ../layout/sample-layout
+
 block content
 	section.team-wrapper.content-wrapper
-		include ../inc/title-bar.ejs
+		include ../inc/title-bar
 		h3.sub-title= subTitle
 		.team-wrap
-			each list in lists
-			include ../components/list
+			each list in lists 
+				include ../components/list
