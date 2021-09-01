@@ -14,7 +14,8 @@
  */
 
 /*************** global init **************/
-const port = 3000
+require('dotenv').config()
+const port = process.env.PORT // process.env는 전역변수에 들어가있는 애들 ->> .env가 등록해줌
 const express = require('express')
 const app = express()
 

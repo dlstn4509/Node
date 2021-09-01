@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const createError = require('http-errors')
+const {error} = require('../../modules/util')
 
 router.get('/login', (req, res, next) => {
-	next(createError(500, '알수없는 오류 관리자에게 문의하세요.'))
+	next(error(500, '알수없는 오류 관리자에게 문의하세요.'))
 })
 
 router.get('/logout', (req, res, next) => {
