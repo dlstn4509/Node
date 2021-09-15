@@ -1,6 +1,5 @@
 /****************************** global init ********************/
 require('dotenv').config()
-const port = process.env.PORT
 const path = require('path')
 const express = require('express')
 const app = express()
@@ -24,13 +23,14 @@ app.use(express.urlencoded({ extended: false }))
 
 /***************************** static init ********************/
 app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 
 /***************************** router init ********************/
-// const Router = require('./routes/')
+const boardRouter = require('./routes/board')
 
-// app.use('/', Router)
+app.use('/board', boardRouter)
 
 
 
