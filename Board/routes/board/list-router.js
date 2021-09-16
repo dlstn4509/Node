@@ -5,14 +5,7 @@ const createError = require('http-errors')
 const {pool} = require('../../modules/mysql-init')
 
 router.get(['/', '/:page'], async (req, res, next) => {
-	let sql, values; 
-	try {
-		sql = " SELECT * FROM report "
-		await pool.execute(sql)
-	}
-	catch (err) {
-		next(createError(err))
-	}
+	res.status(200).json('성공')
 })
 
 module.exports = router
