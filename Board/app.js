@@ -3,6 +3,7 @@ require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const app = express()
+const methodInit = require('./modules/method-init')
 
 /****************************** sever init ******************/
 require('./modules/server-init')(app, process.env.PORT)
@@ -18,6 +19,7 @@ app.locals.pretty = true
 /****************************** middleware ********************/
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(methodInit())
 
 
 
@@ -28,8 +30,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /***************************** router init ********************/
+const langMW = require('./middlewares/lang-mw')
 const boardRouter = require('./routes/board')
 
+app.use(langMW)
 app.use('/board', boardRouter)
 
 

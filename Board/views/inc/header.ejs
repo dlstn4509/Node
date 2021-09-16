@@ -1,8 +1,8 @@
 <header class="header-wrapper">
-	<h1 class="logo"><a href="./list.html">노드 게시판</a></h1>
+	<h1 class="logo"><a href="/board/list"><%= GLOBAL.LOGO %></a></h1>
 	<nav class="navi-wrap">
-		<a href="./write.html" class="navi">게시글 등록</a>
-		<a href="./list.html" class="navi">게시글 리스트</a>
+		<a href="/board" class="navi"><%= GLOBAL.NAVI[0] %></a>
+		<a href="/board/list" class="navi"><%= GLOBAL.NAVI[1] %></a>
 	</nav>
 	<nav class="lang-wrap">
 		<a href="./list.html" class="navi active">한국어</a>
@@ -12,10 +12,10 @@
 </header>
 <section class="title-wrapper">
 	<div class="wrapper">
-		<h2 class="title-wrap">게시글 신규 등록 입니다.</h2>
-		<p class="desc-wrap">노드 게시판 게시글 등록페이지 입니다.</p>
+		<h2 class="title-wrap"><%= eval(PAGE+'.TITLE') %></h2>
+		<p class="desc-wrap"><%= eval(PAGE+'.DESC') %></p>
 		<div class="btn-wrap">
-			<a href="./write.html" class="btn btn-primary">등록</a>
+			<a href="/board" class="btn btn-primary"><%= BT.CREATE %></a>
 		</div>
 	</div>
 </section> 
