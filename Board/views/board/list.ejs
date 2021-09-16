@@ -2,14 +2,13 @@
 <%- include('../inc/header') %> 
 <section class="list-wrapper wrapper">
 	<%- include('../inc/title-board') %>
-	<table class="table table-hover table-dark table-striped text-center">
+	<table class="table table-hover table-dark table-striped text-center board-tbl">
 		<thead>
 			<tr>
 				<th><%= FIELD.NO %></th>
 				<th><%= FIELD.TITLE %></th>
 				<th><%= FIELD.WRITER %></th>
 				<th><%= FIELD.DATE %></th>
-				<th><%= FIELD.UPFILE %></th>
 				<th><%= FIELD.VIEWCOUNT %></th>
 			</tr>
 		</thead>
@@ -19,7 +18,6 @@
 				<td><%= boards.id %></td>
 				<td class="text-left"><a href="./view.html"><%= boards.content %></a></td>
 				<td><%= boards.writer %></td>
-				<td><%= boards.createdAt %></td>
 				<td><%= boards.createdAt %></td>
 				<td><%= boards.viewCount %></td>
 			</tr>

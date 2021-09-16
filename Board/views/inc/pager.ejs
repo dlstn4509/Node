@@ -2,25 +2,27 @@
 <div class="pager-wrapper">
 	<ul class="pager-wrap">
 		<li class="pager pager-first">
-			<a href="/ko/book/1" class="material-icons">first_page</a>
+			<a href="list/1" class="material-icons">first_page</a>
 		</li>
 		<li class="pager pager-prev-set">
-			<a href="/ko/book/1" class="material-icons">keyboard_double_arrow_left</a>
+			<a href="list/<%= prevPager %>" class="material-icons">keyboard_double_arrow_left</a>
 		</li>
 		<li class="pager pager-prev">
-			<a href="/ko/book/1" class="material-icons">chevron_left</a>
+			<a href="list/<%= prevPage %>" class="material-icons">chevron_left</a>
 		</li>
-		<li class="pager active">
-			<a href="/ko/book/1">1</a>
-		</li>
+		<% for(let i=startPage; i<=endPage; i++) { %> 
+			<li class="pager <%= page === i ? 'active' : '' %>">
+				<a href="list/<%= i %>"><%= i %></a>
+			</li>
+		<% } %> 
 		<li class="pager pager-next">
-			<a href="/ko/book/1" class="material-icons">chevron_right</a>
+			<a href="list/<%= nextPage %>" class="material-icons">chevron_right</a>
 		</li>
 		<li class="pager pager-next-set">
-			<a href="/ko/book/1" class="material-icons">keyboard_double_arrow_right</a>
+			<a href="list/<%= nextPager %>" class="material-icons">keyboard_double_arrow_right</a>
 		</li>
 		<li class="pager pager-last">
-			<a href="/ko/book/1" class="material-icons">last_page</a>
+			<a href="list/<%= totalPage %>" class="material-icons">last_page</a>
 		</li>
 	</ul>
 </div>

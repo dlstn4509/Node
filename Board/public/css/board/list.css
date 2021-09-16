@@ -1,0 +1,7 @@
+.board-tbl tbody tr td {cursor: pointer;}
+.board-tbl th:nth-child(1) {width: 10%;}
+.board-tbl th:nth-child(2) {width: 15%;}
+.board-tbl th:nth-child(3) {width: 15%;}
+.board-tbl th:nth-child(4) {width: 15%;}
+.board-tbl th:nth-child(5) {width: 10%;}
+.board-tbl th:nth-child(6) {width: 15%;}

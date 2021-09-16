@@ -30,8 +30,8 @@ router.get(['/', '/:page'], async (req, res, next) => {
 			v.content = cutTail(v.content)
 			v.writer = v.writer || '미상'
 			v.status = chgStatus(v.status)
+			v.viewCount = String(v.viewCount)
 		})
-
 		const js = 'board/list'
 		const css = 'board/list'
 		res.status(200).render('board/list', {js, css, board, pager})
