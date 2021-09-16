@@ -1,0 +1,69 @@
+<%- include('../inc/head', { css }) %> 
+<%- include('../inc/header') %> 
+<section class="view-wrapper wrapper">
+<%- include('../inc/title-board') %>
+<table class="view-tbl">
+	<tbody>
+		<tr>
+			<td class="title"><%= FIELD.TITLE %></td>
+			<td class="content"><%= board.title %></td>
+		</tr>
+		<tr>
+			<td class="title"><%= FIELD.WRITER %></td>
+			<td class="content"><%= board.writer %></td>
+		</tr>
+		<tr>
+			<td class="title"><%= FIELD.DATE %></td>
+			<td class="content"><%= board.createdAt %></td>
+		</tr>
+		<tr>
+			<td class="title"><%= FIELD.STATUS %></td>
+			<td class="content"><%= board.status %></td>
+		</tr>
+		<tr class="content-tr">
+			<td class="title"><%= FIELD.CONTENT %></td>
+			<td class="content"><%= board.content %></td>
+		</tr>
+		<tr>
+			<td class="title"><%= FIELD.UPFILE %></td>
+			<td class="content">
+				<% if(board.upfile) { %> 
+					<img src="<%= board.upfile %>" alt="<%= FIELD.COVER %>" class="my-2 d-block">
+					<a href="/board/download/<%= board.id %>" class="my-2 d-block"><%= board.realName || '' %></a>
+				<% } else { %>
+					<img src="https://via.placeholder.com/120x160" alt="<%= FIELD.COVER %>" class="my-2 d-block">
+				<% } %>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="btn-wrap py-3 d-flex">
+	<a href="./list.html" class="btn btn-primary">리스트</a>
+	<a href="./update.html" class="btn btn-success ml-auto mr-1">수정</a>
+	<a href="#" class="btn btn-danger">삭제</a>
+</div>
+<div class="comment-wrap">
+	<form action="#">
+		<div class="write-wp">
+			<input type="text" class="form-control" placeholder="작성자">
+			<input type="text" class="form-control" placeholder="한줄 코멘트">
+			<button class="btn btn-dark">댓글 등록</button>
+		</div>
+		<table class="table table-striped comment-tbl">
+			<tbody>
+				<tr>
+					<td class="datetime">21-09-15 11:11:15</td>
+					<td class="writer">작성자</td>
+					<td class="comment">댓글을 달았습니다.</td>
+				</tr>
+				<tr>
+					<td class="datetime">21-09-15 11:11:15</td>
+					<td class="writer">작성자</td>
+					<td class="comment">댓글을 달았습니다.</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+</section>
+<%- include('../inc/foot.ejs', {js}) %>

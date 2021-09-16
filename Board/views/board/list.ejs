@@ -14,7 +14,7 @@
 		</thead>
 		<tbody>
 		<% for(let boards of board) { %>
-			<tr data-idx="<%= board.id %> data-lang="<%= LANG %>">
+			<tr data-id="<%= boards.id %>">
 				<td><%= boards.id %></td>
 				<td class="text-left"><a href="./view.html"><%= boards.content %></a></td>
 				<td><%= boards.writer %></td>

@@ -4,11 +4,15 @@ const router = express.Router()
 const listRouter = require('./list-router')
 const writerRouter = require('./write-router')
 const saveRouter = require('./save-router')
+const viewRouter = require('./view-router')
+const downloadRouter = require('./download-router')
 
 
 router.post('/', saveRouter)
 router.get('/', writerRouter)
 router.use('/list', listRouter)
+router.use('/view', viewRouter)
+router.use('/download', downloadRouter)
 
 module.exports = router
 
