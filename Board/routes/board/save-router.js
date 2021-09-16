@@ -11,7 +11,15 @@ router.post('/', uploader.fields([{name: 'upfile'}]), async (req, res, next) => 
 		const {title, writer, content} = req.body
 		sql = `INSERT INTO board SET title=?, writer=?, content=?`
 		values = [title, writer, content]
-		await pool.execute(sql, values)
+		const [rs] = await pool.execute(sql, values)
+
+		/* 		if(req.files) {
+	const [k, [v]] = req.files
+			sql = `INSERT INTO files SET realname=?, savename=?, mimetype=?, size=?, fid=?`
+			values = [v.originalname, v.filename, v.mimetype, v.size, rs.insertId]
+			await pool.execute(sql, values)
+			console.log(v)
+		} */
 		res.redirect('/board/list')
 	}
 	catch (err) {
