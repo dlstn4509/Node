@@ -12,7 +12,6 @@ router.post('/', uploader.fields([{name: 'upfile'}]), async (req, res, next) => 
 		sql = `INSERT INTO board SET title=?, writer=?, content=?`
 		values = [title, writer, content]
 		const [rs] = await pool.execute(sql, values)
-		
 		const {upfile} = req.files
 		const [fieldname] = upfile
 		if (req.files) {
@@ -26,5 +25,6 @@ router.post('/', uploader.fields([{name: 'upfile'}]), async (req, res, next) => 
 		next(createError(err))
 	}
 })
+
 
 module.exports = router

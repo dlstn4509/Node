@@ -12,24 +12,29 @@
 				<tr>
 					<td class="title require">제목</td>
 					<td class="content">
-						<input type="text" name="title" class="form-control" placeholder="제목">
+						<input type="text" name="title" class="form-control" placeholder="제목" value="<%= board ? board.title : '' %>">
 					</td>
 				</tr>
 				<tr>
 					<td class="title">작성자</td>
 					<td class="content">
-						<input type="text" name="writer" class="form-control" placeholder="작성자">
+						<input type="text" name="writer" class="form-control" placeholder="작성자" value="<%= board ? board.writer : '' %>">
 					</td>
 				</tr>
 				<tr>
 					<td class="title">내용</td>
 					<td class="content">
-						<textarea name="content" class="form-control" placeholder="내용"></textarea>
+						<textarea name="content" class="form-control" placeholder="내용"><%= board ? board.content : '' %></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td class="title">첨부파일</td>
 					<td class="content">
+						<% if(board && board.upfile) { %>
+							<img src="<%= board.upfile %>" alt="<%= FIELD.COVER %>" class="my-2 d-block">
+							<div class="file"><%= board.realName %></div>
+							<button type="button" class="btn btn-sm btn-danger" data-idx="<%= board.id %>" id="btRemoveCover">삭제</button>
+						<% } %>
 						<input type="file" name="upfile" class="form-control-file">
 					</td>
 				</tr>

@@ -7,3 +7,5 @@
 .write-wrapper .file-wrap {display: flex; align-items: flex-end; margin-bottom: .5em; padding-bottom: .5em; border-bottom: 1px dotted #ccc;}
 .write-wrapper .file-wrap .img {width: 80px; margin-right: .5em;}
 .write-wrapper .file-wrap .file {margin-right: .5em;}
+
+.write-wrapper .write-tbl img {width: 120px;}
