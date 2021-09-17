@@ -42,7 +42,7 @@
 	<button class="btn btn-success ml-auto mr-1" id="btUpdate" data-id="<%= board.id %>">수정</button>
 	<button class="btn btn-danger" id="btDelete" data-msg="<%= MSG.DELETE %>">삭제</button>
 </div>
-<form action="/board" method="POST" name="deleteForm">
+<form action="/board/delete/<%= board.id %>" method="POST" name="deleteForm">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="hidden" name="id" value="<%= board.id %>">
 </form>

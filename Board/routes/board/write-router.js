@@ -4,6 +4,7 @@ const router = express.Router()
 const createError = require('http-errors')
 const { pool } = require('../../modules/mysql-init')
 const {relPath} = require('../../modules/util')
+const {NO_EXIST} = require('../../modules/lang-init')
 
 router.get('/', (req, res, next) => {
 	req.app.locals.PAGE = 'CREATE'
