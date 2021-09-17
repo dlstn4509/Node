@@ -16,10 +16,6 @@
 			<td class="title"><%= FIELD.DATE %></td>
 			<td class="content"><%= board.createdAt %></td>
 		</tr>
-		<tr>
-			<td class="title"><%= FIELD.STATUS %></td>
-			<td class="content"><%= board.status %></td>
-		</tr>
 		<tr class="content-tr">
 			<td class="title"><%= FIELD.CONTENT %></td>
 			<td class="content"><%= board.content %></td>
@@ -28,7 +24,7 @@
 			<td class="title"><%= FIELD.UPFILE %></td>
 			<td class="content">
 				<% if(board.upfile) { %> 
-					<img src="<%= board.upfile %>" alt="<%= FIELD.COVER %>" class="my-2 d-block">
+					<img src="<%= board.upfile %>" alt="<%= FIELD.UPFILE %>" class="my-2 d-block">
 					<a href="/board/download/<%= board.id %>" class="my-2 d-block"><%= board.realName || '' %></a>
 				<% } else { %>
 					<img src="https://via.placeholder.com/120x160" alt="<%= FIELD.COVER %>" class="my-2 d-block">

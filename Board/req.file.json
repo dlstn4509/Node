@@ -1,0 +1,20 @@
+{
+	"fieldname": "upfile",
+	"originalname": "f4.jpg",
+	"encoding": "7bit",
+	"mimetype": "image/jpeg",
+	"destination": "D:\\cis\\Node\\Board\\storages\\210917",
+	"filename": "210917_641a9a92-9cbc-47c2-a676-47c69a8a73b8.jpg",
+	"path": "D:\\cis\\Node\\Board\\storages\\210917\\210917_641a9a92-9cbc-47c2-a676-47c69a8a73b8.jpg",
+	"size": 23245
+	}
+req.file
+
+	{
+		"_method": "PUT",
+		"id": "",
+		"title": "m",
+		"writer": "m",
+		"content": "i"
+		}
+		req.body

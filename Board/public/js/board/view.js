@@ -7,5 +7,6 @@ function onDelete(e) {
 
 document.querySelector('#btUpdate').addEventListener('click', onUpdate)
 function onUpdate(e) {
-	location.href = 'board/list/' + this.dataset['id']
+	location.href = '/board/' + this.dataset['id']
+	// location.href = `/board/'15'`
 }

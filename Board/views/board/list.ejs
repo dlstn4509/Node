@@ -16,7 +16,7 @@
 		<% for(let boards of board) { %>
 			<tr data-id="<%= boards.id %>">
 				<td><%= boards.id %></td>
-				<td class="text-left"><a href="./view.html"><%= boards.content %></a></td>
+				<td class="text-left"><%= boards.content %></td>
 				<td><%= boards.writer %></td>
 				<td><%= boards.createdAt %></td>
 				<td><%= boards.viewCount %></td>

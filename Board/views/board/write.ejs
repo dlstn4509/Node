@@ -5,8 +5,10 @@
 <section class="write-wrapper wrapper">
 	<%- include('../inc/title-board') %>
 	<form action="/board" method="POST" name="saveWrite" enctype="multipart/form-data">
+		<% if(board) { %> 
 		<input type="hidden" name="_method" value="PUT">
-		<input type="hidden" name="id">
+		<input type="hidden" name="id" value="<%= board.id %>">
+		<% } %> 
 		<table class="write-tbl">
 			<tbody>
 				<tr>
