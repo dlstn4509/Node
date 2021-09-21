@@ -11,3 +11,23 @@ function onSubmit(e) {
   this.submit();
 }
 
+if(document.querySelector('#btRemoveFile')) document.querySelector('#btRemoveFile').addEventListener('click', onRemoveFile)
+
+function onRemoveFile(e) {
+  console.log(this.parentNode)
+}
+
+function onRemoveFile(e) {
+  var id = this.dataset['id'];
+  var parent = this.parentNode;
+  axios.delete('/api/board/file/' + id).then(onSuccess).catch(onError)
+
+  function onSuccess(r) {
+    if(r.data.code === 200) parent.remove()
+  }
+  
+  function onError(err) {
+    console.log(err)
+    console.log(err.response)
+  }
+}

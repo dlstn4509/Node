@@ -32,9 +32,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 /***************************** router init ********************/
 const langMW = require('./middlewares/lang-mw')
 const boardRouter = require('./routes/board')
+const apiRouter = require('./routes/api/board')
 
 app.use(langMW)
 app.use('/board', boardRouter)
+app.use('/api/board', apiRouter)
 
 
 

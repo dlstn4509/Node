@@ -7,10 +7,12 @@ const saveRouter = require('./save-router')
 const viewRouter = require('./view-router')
 const downloadRouter = require('./download-router')
 const deleteRouter = require('./delete-router')
+const commentRouter = require('./comment-router')
 
 
 router.post('/', saveRouter)
 router.use('/delete', deleteRouter)
+router.use('/comment', commentRouter)
 router.use('/list', listRouter)
 router.use('/view', viewRouter)
 router.use('/download', downloadRouter)

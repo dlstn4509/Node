@@ -35,7 +35,7 @@
 						<% if(board && board.upfile) { %>
 							<img src="<%= board.upfile %>" alt="<%= FIELD.COVER %>" class="my-2 d-block">
 							<div class="file"><%= board.realName %></div>
-							<button type="button" class="btn btn-sm btn-danger" data-idx="<%= board.id %>" id="btRemoveCover">삭제</button>
+							<button type="button" class="btn btn-sm btn-danger" data-id="<%= board.upfile.id %>" id="btRemoveFile">삭제</button>
 						<% } %>
 						<input type="file" name="upfile" class="form-control-file">
 					</td>
