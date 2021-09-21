@@ -11,9 +11,14 @@ router.get('/:id', async (req, res, next) => {
 	req.app.locals.PAGE = 'VIEW'
 	let sql, values;
 	try {
-		sql = `SELECT B.*, F.realName, F.saveName, F.mimetype, F.fid FROM board B LEFT JOIN files F ON B.id = F.fid AND F.status > '0' WHERE B.status > '0' AND B.id=?`
+		sql = `SELECT B.*, F.realName, F.saveName, F.mimetype, F.fid, C.writer, C.comment
+		FROM board B
+		LEFT JOIN files F ON B.id = F.fid AND F.status > '0'
+		LEFT JOIN comment C ON B.id = C.fid AND C.status > '0'
+		WHERE B.status > '0' AND B.id=? ORDER BY C.id DESC`
 		values = [req.params.id]
 		const [[board]] = await pool.execute(sql, values)
+    
 		
 		if(board) {
 			board.createdAt = moment(board.createdAt).format('YYYY-MM-DD HH:mm:ss')
@@ -21,6 +26,7 @@ router.get('/:id', async (req, res, next) => {
 			const js = 'board/view'
 			const css = 'board/view'
 			res.status(200).render('board/view', {css, js, board})
+			// res.json(board)
 		}
 		else next(createError(400, NO_EXIST))
 		

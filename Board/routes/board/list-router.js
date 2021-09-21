@@ -35,6 +35,7 @@ router.get(['/', '/:page'], async (req, res, next) => {
 		const js = 'board/list'
 		const css = 'board/list'
 		res.status(200).render('board/list', {js, css, board, pager})
+		// res.json(board)
 	}
 	catch (err) {
 		next(createError(err))

@@ -8,5 +8,9 @@ function onDelete(e) {
 document.querySelector('#btUpdate').addEventListener('click', onUpdate)
 function onUpdate(e) {
 	location.href = '/board/' + this.dataset['id']
-	// location.href = `/board/'15'`
+}
+
+document.querySelector('#btComment').addEventListener('click', onComment)
+function onComment(e) {
+	location.href = '/board/view/' + this.dataset['id']
 }
