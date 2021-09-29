@@ -8,4 +8,4 @@ router.use('/list', listRouter)
 router.use('/view', viewRouter)
 
 
-module.exports = router
+module.exports = router 
