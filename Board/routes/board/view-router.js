@@ -29,7 +29,6 @@ router.get('/:id', async (req, res, next) => {
 			// res.json(board)
 		}
 		else next(createError(400, NO_EXIST))
-		
 	}
 	catch (err) {
 		next(createError(err))
