@@ -4,6 +4,7 @@ const port = process.env.PORT
 const path = require('path')
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 
 /****************************** sever init ******************/
@@ -18,6 +19,7 @@ app.locals.pretty = true
 
 
 /****************************** middleware ********************/
+app.use(cors({credentials: true}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
