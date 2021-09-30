@@ -1,5 +1,3 @@
-// npm i express uuid dotenv cors ejs mysql2 http-errors jsonwebtoken lodash numeral moment morgan
-
 /****************************** global init ********************/
 require('dotenv').config()
 const port = process.env.PORT
@@ -31,9 +29,7 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /***************************** router init ********************/
-// const Router = require('./routes/')
 
-// app.use('/', Router)
 
 
 

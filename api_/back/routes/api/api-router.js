@@ -1,11 +1,15 @@
-const path = require('path')
 const express = require('express')
 const router = express.Router()
-const { error } = require('../../modules/util')
-// const { pool } = require('../../modules/mysql-init')
+const jwt = require('jsonwebtoken')
+const { pool } = require('../../modules/mysql-init')
 
-router.get('/', (req, res, next) => {
-
+router.get('/', async (req, res, next) => {
+	try {
+		
+	}
+	catch (err) {
+		res.status(500).json(err)
+	}
 })
 
 module.exports = router
