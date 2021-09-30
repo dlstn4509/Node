@@ -32,6 +32,9 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /***************************** router init ********************/
+const apiRouter = require('./routes/api')
+app.use('/api', apiRouter)
+
 app.get('/token', (req, res, next) => {
 	let token = jwt.sign({ 
 		userid: 'dlstn4509', 
