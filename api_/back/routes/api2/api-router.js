@@ -12,8 +12,8 @@ router.get('/', async (req, res, next) => {
 			token = jwt.sign({ data: verifyToken.data }, process.env.JWT_SALT, { expiresIn: '10s' })
 		}
 		else {
-			sql = " SELECT * FROM users_api WHERE apikey=? "
-			const [rs] = await pool.execute(sql, [req.query.apikey])
+			sql = ` SELECT * FROM users_api WHERE apikey=? AND domain=? `
+			const [rs] = await pool.execute(sql, [req.query.apikey, req.headers.origin])
 			token = jwt.sign({ data: rs[0] }, process.env.JWT_SALT, { expiresIn: '10s' })
 		}
 		res.cookie('token', token, { expires: new Date(Date.now() + 10000) }).json({ success: true, msg: '쿠키발행' })
